@@ -7,7 +7,8 @@
     --rerely-color:#E7E9FC;
     --all-page-color: #E5E5E5;
     --lidht-shade:#F4F4FD;
-    --logo-case:#8E8F99 
+    --logo-case:#8E8F99;
+    --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -109,7 +110,8 @@ button {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
-    color:var(--primary-text-color)
+    color:var(--primary-text-color);
+    transition: var(--transition)
 }
 
 .address-post, 
@@ -119,12 +121,44 @@ button {
     font-size: 16px;
     line-height: 1.5;
     color:var(--title-text-color);
+    transition: var(--transition)
+}
+.page-nav {
+    position: relative;
+}
+.menu-item {
+    position: relative;
+}
+.menu-line {
+    position: relative;
+}
+.menu-studio::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color:  #404BBF;
+    border-radius: 2px;
+    position: absolute;
+    overflow: auto;
+    transform: translateY(21px);
+    
+}
+.menu-potfolio::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color:  #404BBF;
+    border-radius: 2px;
+    position: absolute;
+    overflow: auto;
+    transform: translateY(21px);
 }
 /*===========================body==========================*/
 body {
     font-family: 'Roboto', sans-serif;
     color: var(--primary-text-color);
-    background-color: var(var(--all-page-color));
 }
 /*+++++++ content all body +++++++*/
 /* little subtitle */
@@ -134,6 +168,7 @@ body {
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
+    color: #434455;
 }
 /* middle subtitle */
 .title {
@@ -155,7 +190,7 @@ body {
 /* chenge text color */
 .change:hover, 
 .change:focus {
-    color:var(--accent-color);
+    color:var(--accent-color-hard);
 }
 
 /*== section HERO ===========================================*/
@@ -192,12 +227,13 @@ body {
     font-size: 16px;
     line-height: 1.5;
     color:var(--hero-light-accent);
-    background: #4D5AE5;   
+    background-color: #4D5AE5;   
     padding: 16px 32px;
     border-radius: 4px;
-    display: block;
+    display: flex;
     margin:0 auto;
     border-width: 0px;
+    transition: var(--transition)
 }
 .modal-btn:hover,
 .modal-btn:focus {
@@ -290,6 +326,7 @@ body {
     height: 40px;
     border-radius: 50%;
     background-color: #4D5AE5;
+    transition: var(--transition);
 }
 .social-list-link:hover,
 .social-list-link:focus {
@@ -310,12 +347,12 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
-    
 }
 .customer-box {
     flex-basis: calc((100% - 120px) / 6);
 }
-.customer-list-link {
+
+.customer-link {
     display: flex;
     width: 100%;
     height: 88px;
@@ -323,19 +360,20 @@ body {
     border-radius: 4px;
     justify-content: center;
     align-items: center;
+    fill: #8E8F99;
+    transition: var(--transition);
+    
 }
-.customer-list-link:hover,
-.customer-list-link:focus {
-    border-color: #4D5AE5;
+.customer-link:hover,
+.customer-link:focus {
+   
+   border-color: #4D5AE5;
+}
+.customer-link:hover,
+.customer-link:focus {
+    fill: #4D5AE5;
 }
 
-.logo-box {
-    fill: #8E8F99;
-}
-.logo-box:hover,
-.logo-box:focus {
-    fill: #404BBF;
-}
 /*== section footer ========================================*/ 
 .footer {
     background-color: var(--primary-text-color);
@@ -381,7 +419,9 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color:var(--title-text-color)
+    background-color:var(--title-text-color);
+    transition: var(--transition);
+    
 }
 /*2============================ secod page ===============================*/
 /*== кнопки меню ==*/
@@ -408,19 +448,21 @@ body {
     background:var(--lidht-shade);
     border: 1px solid var(--rerely-color);
     border-radius: 4px;
+    transition: var(--transition);
 }
 .button-nov:hover,
 .button-nov:focus {
     color: var(--hero-light-accent);
-    background-color: var(--accent-color);
+    background-color: #404BBF;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-
+    border-color: #404BBF;;
 }
 .button-nov-list {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
 }
+/*== case ==*/
 .case-list {
     display: flex;
     flex-wrap: wrap;
@@ -430,6 +472,7 @@ body {
 }
 .case-distance-foto {
     flex-basis: calc((100% - 48px) / 3);
+    transition: var(--transition);
 }
 .button-nov-list {
     justify-content: center;
@@ -451,6 +494,7 @@ body {
     position: relative;
     overflow: hidden;
 }
+
 .overlay {
     padding-left: 32px;
     padding-right: 32px;
@@ -467,9 +511,70 @@ body {
     top: 0;
     overflow: auto;
     transform: translate(0, 100%);
-    transition: transform 500ms linear; 
+    transition: var(--transition)
+
 }
-.case-list-img-wrapper:hover .overlay {
+.case-link:hover .overlay,
+.case-link:focus .overlay {
     transform: translate(0, 0);
+   
 }
-/* new gap*------/bvdbj=============
+
+/*========= modal window =============*/
+.backdrop {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+     
+
+}
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 528px;
+    height: 580px;
+    background-color: #FCFCFC;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px; 
+
+}
+.modal-cloce-btn {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    padding: 0;
+    border:1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:  #E7E9FC;
+    transition: background-color var(--transition);
+}
+.modal-cloce-btn:hover,
+.modal-cloce-btn:focus {
+    background-color: #4D5AE5;
+    fill: var(--hero-light-accent);
+}
+
+.modal-cloce-btn:hover .modal-cloce-btn-svg,
+.modal-cloce-btn:focus .modal-cloce-btn-svg {
+    fill: var(--hero-light-accent);
+}
+.modal-cloce-btn-svg {
+    transition: fill var(--transition);
+
+}

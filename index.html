@@ -21,10 +21,10 @@
                         <a class="menu-studio link nav-head change" href="./index.html">Studio</a>
                     </li>
                     <li class="menu-item">
-                        <a class="menu-potfolio link nav-head change" href="./portfolio.html">Portfolio</a>
+                        <a class="menu-portfolio link nav-head change" href="./portfolio.html">Portfolio</a>
                     </li>
                     <li class="menu-item">
-                        <a class="menu-contact link nav-head change" href="">Contacts</a>
+                        <a class="menu-line link nav-head change" href="">Contacts</a>
                     </li>
                 </ul>
             </nav>
@@ -44,7 +44,7 @@
         <section class="hero">
             <div class="container">
                 <h1 class="hero-coll">Effective Solutions for Your Business</h1>
-                 <button class="modal-btn" type="button">Order Service</button>
+                 <button class="modal-btn" type="button" data-modal-open>Order Service</button>
             </div>
         </section>
         <section class="valuet indent-page">
@@ -267,44 +267,44 @@
                 <h2 class="title customers-every">Customers</h2>
                 <ul class="customer-logo-list list">
                     <li class="customer-box">
-                         <a href=""class="customer-list-link link">
-                            <svg class="customer-logo-first logo-box" width="104" height="56">
+                         <a href=""class="customer-link link">
+                            <svg class="customer-logo" width="104" height="56">
                                 <use href="./images/sptite.svg#icon-logo-first"></use>
                             </svg>
                         </a>
                     </li>
                     <li class="customer-box">
-                        <a href="" class="customer-list-link link">
-                            <svg class="customer-logo-one logo-box" width="104" height="56">
+                        <a href="" class="customer-link link">
+                            <svg class="customer-logo" width="104" height="56">
                                 <use href="./images/sptite.svg#icon-logo-on"></use>
                             </svg>
                         </a>
                     </li>
                     <li class="customer-box">
-                        <a href="" class="customer-list-link link">
-                            <svg class="customer-logo-two logo-box" width="104" height="56">
+                        <a href="" class="customer-link link">
+                            <svg class="customer-logo" width="104" height="56">
                                 <use href="./images/sptite.svg#icon-logo-two"></use>
                             </svg>
                         </a>
                     </li>
                     <li class="customer-box">
-                        <a href="" class="customer-list-link link">
-                            <svg class="customer-logo-three logo-box" width="104" height="56">
+                        <a href="" class="customer-link link">
+                            <svg class="customer-logo" width="104" height="56">
                                 <use href="./images/sptite.svg#icon-logo-three"></use>
                             </svg>
                         </a>
                     </li>
                     <li class="customer-box">
-                        <a href="" class="customer-list-link link">
-                            <svg class="customer-logo-for logo-box" width="104" height="56">
+                        <a href="" class="customer-link link">
+                            <svg class="customer-logo" width="104" height="56">
                                 <use href="./images/sptite.svg#icon-logo-for"></use>
                             </svg>
                         </a>
                     </li>
                     <li class="customer-box">
-                        <a href="" class="customer-list-link link">
-                            <svg class="customert-logo-fiv logo-box" width="104" height="56">
-                                <use classs="logo-cheng" href="./images/sptite.svg#icon-logo-fiv"></use>
+                        <a href="" class="customer-link link">
+                            <svg class="customer-logo" width="104" height="56">
+                                <use href="./images/sptite.svg#icon-logo-fiv"></use>
                             </svg>
                         </a>
                     </li>
@@ -355,5 +355,16 @@
             </ul>
         </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button type="button" class="modal-cloce-btn" data-modal-close>
+                <svg class="modal-cloce-btn-svg" width="8" height="8">
+                    <use href="./images/sptite.svg#close-modal"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
 </body>
 </html>
